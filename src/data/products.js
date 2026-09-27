@@ -20,6 +20,7 @@ import terryTowelsImg from '../assets/Product/plush-terry-towelling.jfif';
 import medicalFabricsImg from '../assets/Product/hospital.jpg';
 import cardedYarnCanvasImg from '../assets/Product/carded-yarn-canvas.jfif';
 import curtainsImg from '../assets/Product/curtains.jfif';
+import tableClothingImg from '../assets/Product/table-clothing.jpg';
 
 export const PRODUCT_IMAGES = {
   luxuryBedsheets: luxuryBedsheetsImg,
@@ -29,50 +30,55 @@ export const PRODUCT_IMAGES = {
   medicalFabrics: medicalFabricsImg,
   cardedYarnCanvas: cardedYarnCanvasImg,
   curtains: curtainsImg,
+  tableClothing: tableClothingImg,
 };
 
 export function getProductFallbackImage(product) {
-  if (!product) return curtainsImg;
+  if (!product) return tableClothingImg;
   
   const text = `${product.id || ''} ${product.title || ''} ${product.category || ''} ${product.category_name || ''} ${product.categoryName || ''} ${product.tagline || ''} ${product.description || ''} ${product.badge || ''}`.toLowerCase();
   
-  // 1. Curtains, Drapery, Canvas & Duck Fabric
+  // 1. Table Linens, Table Clothing, Napkins & Banquet Dining
+  if (text.includes('table') || text.includes('napkin') || text.includes('dining') || text.includes('banquet') || text.includes('runner') || text.includes('cloth') || text.includes('damask')) {
+    return tableClothingImg;
+  }
+  // 2. Curtains, Drapery, Canvas & Duck Fabric
   if (text.includes('curtain') || text.includes('drapery') || text.includes('canvas') || text.includes('duck') || text.includes('window') || text.includes('blind')) {
     return curtainsImg;
   }
-  // 2. Towels & Terry Bath Linens
-  if (text.includes('towel') || text.includes('terry') || text.includes('bath') || text.includes('absorbent') || text.includes('plush') || text.includes('resort') || text.includes('dining') || text.includes('550') || text.includes('700')) {
+  // 3. Towels & Terry Bath Linens
+  if (text.includes('towel') || text.includes('terry') || text.includes('bath') || text.includes('absorbent') || text.includes('plush') || text.includes('resort') || text.includes('550') || text.includes('700')) {
     return terryTowelsImg;
   }
-  // 3. Medical, Hospital Scrubs & Autoclavable Fabrics
+  // 4. Medical, Hospital Scrubs & Autoclavable Fabrics
   if (text.includes('hospital') || text.includes('medical') || text.includes('scrub') || text.includes('autoclav') || text.includes('barrier') || text.includes('drape') || text.includes('surgical') || text.includes('bleach') || text.includes('antimicrobial') || text.includes('poplin')) {
     return medicalFabricsImg;
   }
-  // 4. Yarn Cones & OEM Weaving
+  // 5. Yarn Cones & OEM Weaving
   if (text.includes('carded') || text.includes('cone') || text.includes('yarn') || text.includes('greige') || text.includes('oem') || text.includes('weaving')) {
     return cardedYarnCanvasImg;
   }
-  // 5. Industrial Twill & Workwear Uniforms
+  // 6. Industrial Twill & Workwear Uniforms
   if (text.includes('workwear') || text.includes('twill') || text.includes('industrial') || text.includes('durability') || text.includes('flame') || text.includes('apparel') || text.includes('oil') || text.includes('gas') || text.includes('11612') || text.includes('heavy-duty')) {
     return industrialFabricsImg;
   }
-  // 6. High Thread Count Hotel Percale Bedding
-  if (text.includes('thread') || text.includes('percale') || text.includes('300tc') || text.includes('hotel') || text.includes('retail bedding') || text.includes('flagship')) {
+  // 7. High Thread Count Hotel Percale Bedding
+  if (text.includes('thread') || text.includes('percale') || text.includes('300tc') || text.includes('bedding') || text.includes('flagship')) {
     return highThreadCountImg;
   }
-  // 7. Luxury Sateen Bedding Collection
+  // 8. Luxury Sateen Bedding Collection
   if (text.includes('sateen') || text.includes('luxury') || text.includes('bed') || text.includes('sheet') || text.includes('duvet') || text.includes('combed') || text.includes('400tc') || text.includes('1000tc')) {
     return luxuryBedsheetsImg;
   }
   
-  return curtainsImg;
+  return tableClothingImg;
 }
 
 export const PRODUCT_CATEGORIES = [
   { id: 'all', label: 'All Collections' },
   { id: 'home', label: 'Home Textiles' },
-  { id: 'apparel', label: 'Apparel & Workwear' },
   { id: 'hospitality', label: 'Hospitality & Dining' },
+  { id: 'apparel', label: 'Apparel & Workwear' },
   { id: 'medical', label: 'Institutional & Medical' },
 ];
 
@@ -101,25 +107,24 @@ export const PRODUCTS = [
   },
   {
     id: 'prod-02',
-    category: 'home',
-    categoryName: 'Home Textiles',
-    title: 'High Thread-Count Hotel & Retail Bedding',
-    tagline: 'High thread count hotel & retail bedding crafted from combed long-staple cotton',
-    description: 'Crisp, lightweight hotel-grade percale and sateen weave designed for breathable luxury. Finished with hidden button closures and reinforced envelope pillow flaps.',
-    image: highThreadCountImg,
-    fallbackImage: highThreadCountImg,
+    category: 'hospitality',
+    categoryName: 'Hospitality & Dining',
+    title: 'Premium Damask Table Clothing & Dining Linens',
+    tagline: 'Commercial grade jacquard damask tablecloths, napkins, & banquet table runners',
+    description: 'Engineered for luxury restaurants, 5-star hotels, and banquet venues. Woven from 100% mercerized combed cotton with soil-release, stain-resistant finishes and double-stitched hem borders.',
+    image: tableClothingImg,
+    fallbackImage: tableClothingImg,
     specs: {
-      composition: '100% Combed Cotton / Egyptian Blend',
-      threadCount: '300 TC – 800 TC Sateen & Percale',
-      gsm: '120 – 150 GSM',
-      finish: 'Bio-wash, Soft hand feel, Easy Iron',
-      sizes: 'Custom European & American sizing',
-      colors: 'Solid White, Pastels, Yarn-dyed stripes',
-      moq: '600 Sets',
+      composition: '100% Combed Cotton / 80-20 Damask Blend',
+      gsm: '210 – 260 GSM Heavyweight Dining',
+      finish: 'Stain-Release, Anti-Wrinkle, Bleach-Safe',
+      sizes: 'Custom Banquet Rounds, Rectangular & Napkins (50x50cm)',
+      colors: 'Crisp White, Ivory, Champagne, Custom Pantones',
+      moq: '500 Sets / 1,000 Pcs',
       leadTime: '25–35 Days'
     },
-    features: ['Crisp hotel touch', 'Exceptional tensile strength', 'Fast-drying construction', 'Minimal shrinkage (< 2%)'],
-    badge: 'Flagship Export'
+    features: ['Commercial laundry durable (300+ wash cycles)', 'High soil-release and stain-repellent finish', 'Precision mitred corners and double-stitched hems', 'OEKO-TEX Standard 100 Certified'],
+    badge: 'Banquet & Dining Grade'
   },
   {
     id: 'prod-03',

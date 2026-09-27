@@ -15,7 +15,7 @@ import api from '../api/client';
 const DataContext = createContext(null);
 
 const STORAGE_KEYS = {
-  PRODUCTS: 'ah_impex_products_v14',
+  PRODUCTS: 'ah_impex_products_v17',
   CATEGORIES: 'ah_impex_categories_v10',
   COMPANY: 'ah_impex_company_v10',
   INQUIRIES: 'ah_impex_inquiries_v9',
@@ -36,8 +36,9 @@ export function deduplicateProducts(productList) {
   for (const prod of productList) {
     if (!prod || !prod.title) continue;
     
-    // Explicitly exclude deleted/removed products
-    if (String(prod.title).toLowerCase().includes('carded yarn') && !String(prod.title).toLowerCase().includes('canvas') && !String(prod.title).toLowerCase().includes('curtain')) {
+    // Explicitly exclude deleted/stale products (e.g. duplicate BedSheets or carded yarn)
+    const lowerTitle = String(prod.title).toLowerCase().trim();
+    if (lowerTitle === 'bedsheets' || (lowerTitle.includes('carded yarn') && !lowerTitle.includes('canvas') && !lowerTitle.includes('curtain'))) {
       continue;
     }
     
