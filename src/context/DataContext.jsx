@@ -15,7 +15,7 @@ import api from '../api/client';
 const DataContext = createContext(null);
 
 const STORAGE_KEYS = {
-  PRODUCTS: 'ah_impex_products_v11',
+  PRODUCTS: 'ah_impex_products_v14',
   CATEGORIES: 'ah_impex_categories_v10',
   COMPANY: 'ah_impex_company_v10',
   INQUIRIES: 'ah_impex_inquiries_v9',
@@ -37,7 +37,7 @@ export function deduplicateProducts(productList) {
     if (!prod || !prod.title) continue;
     
     // Explicitly exclude deleted/removed products
-    if (prod.id === 'prod-06' || String(prod.title).toLowerCase().includes('carded yarn')) {
+    if (String(prod.title).toLowerCase().includes('carded yarn') && !String(prod.title).toLowerCase().includes('canvas') && !String(prod.title).toLowerCase().includes('curtain')) {
       continue;
     }
     
@@ -241,16 +241,17 @@ export function DataProvider({ children }) {
       }
 
       if (prodsRes.status === 'fulfilled' && Array.isArray(prodsRes.value) && prodsRes.value.length > 0) {
-        const backendProds = prodsRes.value.map((p, idx) => {
+        const backendProds = prodsRes.value.map((p) => {
           const isUnsplash = typeof p.image === 'string' && p.image.includes('unsplash.com');
           const isCustomUpload = p.image && typeof p.image === 'string' && !isUnsplash && (p.image.startsWith('data:') || p.image.includes('/media/products/') || p.image.startsWith('http'));
-          const finalImg = isCustomUpload ? p.image : (DEFAULT_PRODUCTS[idx]?.image || getProductFallbackImage(p));
+          const fallback = getProductFallbackImage(p);
+          const finalImg = isCustomUpload ? p.image : fallback;
           return {
             ...p,
             title: (p.title || '').replace(/\s+and\s+/gi, ' & '),
             categoryName: (p.categoryName || p.category_name || (typeof p.category === 'object' ? p.category.name : '') || '').replace(/\s+and\s+/gi, ' & '),
             image: finalImg,
-            fallbackImage: getProductFallbackImage(p)
+            fallbackImage: fallback
           };
         });
 

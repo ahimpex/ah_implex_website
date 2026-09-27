@@ -19,6 +19,7 @@ import industrialFabricsImg from '../assets/Product/industrial-durability-fabric
 import terryTowelsImg from '../assets/Product/plush-terry-towelling.jfif';
 import medicalFabricsImg from '../assets/Product/hospital.jpg';
 import cardedYarnCanvasImg from '../assets/Product/carded-yarn-canvas.jfif';
+import curtainsImg from '../assets/Product/curtains.jfif';
 
 export const PRODUCT_IMAGES = {
   luxuryBedsheets: luxuryBedsheetsImg,
@@ -27,39 +28,44 @@ export const PRODUCT_IMAGES = {
   terryTowels: terryTowelsImg,
   medicalFabrics: medicalFabricsImg,
   cardedYarnCanvas: cardedYarnCanvasImg,
+  curtains: curtainsImg,
 };
 
 export function getProductFallbackImage(product) {
-  if (!product) return luxuryBedsheetsImg;
+  if (!product) return curtainsImg;
   
   const text = `${product.id || ''} ${product.title || ''} ${product.category || ''} ${product.category_name || ''} ${product.categoryName || ''} ${product.tagline || ''} ${product.description || ''} ${product.badge || ''}`.toLowerCase();
   
-  // 1. Towels & Terry Bath Linens
+  // 1. Curtains, Drapery, Canvas & Duck Fabric
+  if (text.includes('curtain') || text.includes('drapery') || text.includes('canvas') || text.includes('duck') || text.includes('window') || text.includes('blind')) {
+    return curtainsImg;
+  }
+  // 2. Towels & Terry Bath Linens
   if (text.includes('towel') || text.includes('terry') || text.includes('bath') || text.includes('absorbent') || text.includes('plush') || text.includes('resort') || text.includes('dining') || text.includes('550') || text.includes('700')) {
     return terryTowelsImg;
   }
-  // 2. Medical, Hospital Scrubs & Autoclavable Fabrics
+  // 3. Medical, Hospital Scrubs & Autoclavable Fabrics
   if (text.includes('hospital') || text.includes('medical') || text.includes('scrub') || text.includes('autoclav') || text.includes('barrier') || text.includes('drape') || text.includes('surgical') || text.includes('bleach') || text.includes('antimicrobial') || text.includes('poplin')) {
     return medicalFabricsImg;
   }
-  // 3. Yarn Cones, Canvas & OEM Weaving
-  if (text.includes('canvas') || text.includes('duck') || text.includes('carded') || text.includes('cone') || text.includes('yarn') || text.includes('greige') || text.includes('oem') || text.includes('weaving')) {
+  // 4. Yarn Cones & OEM Weaving
+  if (text.includes('carded') || text.includes('cone') || text.includes('yarn') || text.includes('greige') || text.includes('oem') || text.includes('weaving')) {
     return cardedYarnCanvasImg;
   }
-  // 4. Industrial Twill & Workwear Uniforms
+  // 5. Industrial Twill & Workwear Uniforms
   if (text.includes('workwear') || text.includes('twill') || text.includes('industrial') || text.includes('durability') || text.includes('flame') || text.includes('apparel') || text.includes('oil') || text.includes('gas') || text.includes('11612') || text.includes('heavy-duty')) {
     return industrialFabricsImg;
   }
-  // 5. High Thread Count Hotel Percale Bedding
+  // 6. High Thread Count Hotel Percale Bedding
   if (text.includes('thread') || text.includes('percale') || text.includes('300tc') || text.includes('hotel') || text.includes('retail bedding') || text.includes('flagship')) {
     return highThreadCountImg;
   }
-  // 6. Luxury Sateen Bedding Collection
+  // 7. Luxury Sateen Bedding Collection
   if (text.includes('sateen') || text.includes('luxury') || text.includes('bed') || text.includes('sheet') || text.includes('duvet') || text.includes('combed') || text.includes('400tc') || text.includes('1000tc')) {
     return luxuryBedsheetsImg;
   }
   
-  return luxuryBedsheetsImg;
+  return curtainsImg;
 }
 
 export const PRODUCT_CATEGORIES = [
@@ -178,5 +184,26 @@ export const PRODUCTS = [
     },
     features: ['Withstands 75°C+ high-temperature sterilization', 'Fluid-repellent fluorocarbon barrier finish', 'Lint-free spun yarns for surgical cleanrooms', 'Silvadur antimicrobial protection'],
     badge: 'Medical Grade'
+  },
+  {
+    id: 'prod-06',
+    category: 'apparel',
+    categoryName: 'Apparel & Workwear',
+    title: 'Export Grade Cotton Canvas Duck Fabric',
+    tagline: '10oz to 24oz heavy-duty waterproof canvas & decorative curtains',
+    description: 'Premium 100% cotton canvas duck fabric and commercial window drapery woven on high-speed air-jet looms for export markets.',
+    image: curtainsImg,
+    fallbackImage: curtainsImg,
+    specs: {
+      composition: '100% Cotton Canvas',
+      gsm: '450 GSM',
+      finish: 'Water-Repellent, Colorfast Reactive Dyeing, Preshrunk',
+      sizes: 'Custom Panel Lengths & Extra-Wide Roll Widths',
+      colors: 'Navy Blue, Olive, Khaki, Natural Greige',
+      moq: '1,000 Meters',
+      leadTime: '30–40 Days'
+    },
+    features: ['High tear and tensile strength', 'Even air-jet weave structure', 'Custom water-repellent & PU coating available', 'OEKO-TEX Certified dyes'],
+    badge: 'Export Quality'
   }
 ];
