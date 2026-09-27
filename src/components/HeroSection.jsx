@@ -91,8 +91,7 @@ export default function HeroSection({ onOpenQuoteModal }) {
   const trustPillars = [
     { name: 'Quality Focused', desc: 'AQL 1.5 Standard' },
     { name: 'Export Ready', desc: '25+ Global Markets' },
-    { name: 'OEM / Private Label', desc: 'Custom Weaving & Stitching' },
-    { name: 'International Standards', desc: 'ISO 9001 & OEKO-TEX 100' },
+    { name: 'OEM / Private Label', desc: 'Custom Weaving & Stitching' }
   ];
 
   const nextSlide = useCallback(() => {
@@ -189,8 +188,8 @@ export default function HeroSection({ onOpenQuoteModal }) {
               </button>
             </div>
 
-            {/* 4 Trust Indicators Underneath */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 pt-4 sm:pt-6 border-t border-white/20 w-full">
+            {/* Trust Indicators Underneath */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3 pt-4 sm:pt-6 border-t border-white/20 w-full">
               {trustPillars.map((pillar, idx) => (
                 <div key={idx} className="flex flex-col bg-[#071830]/75 backdrop-blur-md p-2 sm:p-2.5 rounded-lg border border-brand-500/20 shadow-sm">
                   <div className="flex items-center gap-1 sm:gap-1.5 text-[11px] sm:text-xs font-semibold text-white mb-0.5">
