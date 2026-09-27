@@ -7,7 +7,7 @@ import AboutSection from './components/AboutSection';
 import ProductSection from './components/ProductSection';
 import ManufacturingSection from './components/ManufacturingSection';
 import QualityControl from './components/QualityControl';
-import CertificationSection from './components/CertificationSection';
+// import CertificationSection from './components/CertificationSection';
 import ExportMarkets from './components/ExportMarkets';
 import SocialSection from './components/SocialSection';
 import ContactCTA from './components/ContactCTA';
@@ -93,7 +93,7 @@ function MainApp() {
         <QualityControl onOpenQuoteModal={handleOpenQuoteModal} />
 
         {/* 9. Certifications & International Standards Showcase with Lightbox */}
-        <CertificationSection onOpenQuoteModal={handleOpenQuoteModal} />
+        {/* <CertificationSection onOpenQuoteModal={handleOpenQuoteModal} /> */}
 
         {/* 11. Worldwide Logistics & Export Markets Visual */}
         <ExportMarkets onOpenQuoteModal={handleOpenQuoteModal} />

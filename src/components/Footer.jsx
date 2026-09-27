@@ -94,7 +94,7 @@ export default function Footer({ onOpenQuoteModal, onOpenAdmin }) {
                   <FontAwesomeIcon icon={faFacebookF} className="text-xs sm:text-sm" />
                 </a>
                 <a
-                  href={`https://wa.me/${info.contact?.whatsappClean || '923008660309'}`}
+                  href={`https://wa.me/${info.contact?.whatsappClean || '923138660309'}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-brand-800 hover:bg-[#25D366] text-slate-300 hover:text-white flex items-center justify-center transition-all border border-brand-700 hover:border-[#25D366] hover:scale-105 shadow-sm"
@@ -134,11 +134,11 @@ export default function Footer({ onOpenQuoteModal, onOpenAdmin }) {
                   6-Stage Quality Control
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a href="#certifications" className="hover:text-brand-300 transition-colors">
                   Compliance <span className="font-sans font-semibold">&amp;</span> Certifications
                 </a>
-              </li>
+              </li> */}
               <li>
                 <a href="#export" className="hover:text-brand-300 transition-colors">
                   Global Export Corridors

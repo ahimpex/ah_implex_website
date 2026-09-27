@@ -24,8 +24,8 @@ import { COMPANY } from '../data/company';
 export default function SocialSection() {
   const { companyInfo } = useData();
   const info = companyInfo || COMPANY;
-  const whatsappNumber = info.contact?.whatsappClean || '923008660309';
-  const whatsappFormatted = info.contact?.whatsapp || '+92 300 8660309';
+  const whatsappNumber = info.contact?.whatsappClean || '923138660309';
+  const whatsappFormatted = info.contact?.whatsapp || '+92 313 8660309';
 
   const socialCards = [
     {

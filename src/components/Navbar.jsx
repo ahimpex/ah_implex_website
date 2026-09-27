@@ -35,7 +35,7 @@ export default function Navbar({ onOpenQuoteModal, onOpenAdmin }) {
     { name: 'Products', href: '#products', id: 'products' },
     { name: 'Manufacturing', href: '#manufacturing', id: 'manufacturing' },
     { name: 'Quality Control', href: '#quality', id: 'quality' },
-    { name: 'Certifications', href: '#certifications', id: 'certifications' },
+    // { name: 'Certifications', href: '#certifications', id: 'certifications' },
     { name: 'Global Reach', href: '#export', id: 'export' },
     { name: 'Contact', href: '#contact', id: 'contact' },
   ];
@@ -51,7 +51,7 @@ export default function Navbar({ onOpenQuoteModal, onOpenAdmin }) {
         setScrollProgress(progress);
       }
 
-      const sections = ['contact', 'export', 'certifications', 'quality', 'manufacturing', 'products', 'about'];
+      const sections = ['contact', 'export', /* 'certifications', */ 'quality', 'manufacturing', 'products', 'about'];
       let currentSection = 'home';
       const scrollPos = window.scrollY + 200;
 

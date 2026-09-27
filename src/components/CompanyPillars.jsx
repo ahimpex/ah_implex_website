@@ -37,7 +37,7 @@ export const PILLARS = [
     subtitle: 'Ethical Workplace Culture',
     description: 'Operating in strict accordance with amfori BSCI & Sedex SMETA principles—ensuring fair living wages, workplace safety, female empowerment, & zero child labor.',
     linkText: 'Read Standards',
-    href: '#certifications'
+    href: '#about' // formerly '#certifications'
   }
 ];
 

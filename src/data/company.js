@@ -73,9 +73,9 @@ export const COMPANY = {
   contact: {
     email: 'export@ahimpextextiles.com',
     salesEmail: 'sales@ahimpextextiles.com',
-    phone: '+92 300 8660309',
-    whatsapp: '+92 300 8660309',
-    whatsappClean: '923008660309',
+    phone: '+92 313 8660309',
+    whatsapp: '+92 313 8660309',
+    whatsappClean: '923138660309',
     address: 'A&H Impex Industrial Estate, Faisalabad, Punjab, Pakistan',
     addressNote: '(Mill & Head Office - Verification available for on-site client audits)',
     workingHours: 'Monday - Saturday: 08:00 - 19:00 (GMT+5)',
@@ -87,7 +87,7 @@ export const COMPANY = {
     { name: 'LinkedIn', url: 'https://www.linkedin.com/company/a-h-impex/', icon: 'Linkedin', followers: 'Corporate' },
     { name: 'Instagram', url: 'https://www.instagram.com/a_h_impex/', icon: 'Instagram', followers: 'Showroom' },
     { name: 'Facebook', url: 'https://www.facebook.com/ahimpextextiles', icon: 'Facebook', followers: 'Official Page' },
-    { name: 'WhatsApp', url: 'https://wa.me/923008660309', icon: 'MessageSquare', followers: 'Instant RFQ' },
+    { name: 'WhatsApp', url: 'https://wa.me/923138660309', icon: 'MessageSquare', followers: 'Instant RFQ' },
     { name: 'Email', url: 'mailto:export@ahimpextextiles.com', icon: 'Mail', followers: 'Direct Desk' }
   ]
 };

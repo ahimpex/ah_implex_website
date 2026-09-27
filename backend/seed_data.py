@@ -282,15 +282,15 @@ def seed_all():
         'email': 'info@ah-impex.com',
         'phone': '+92 41 854 1234',
         'phoneRaw': '+92418541234',
-        'whatsapp': '+92 300 8660309',
-        'whatsappClean': '923008660309',
+        'whatsapp': '+92 313 8660309',
+        'whatsappClean': '923138660309',
         'address': 'Mill Sector 4, Khurrianwala Industrial Zone, Faisalabad, Punjab, Pakistan',
         'addressNote': 'Direct Access to M-4 Motorway & Dry Port Clearance Terminals',
         'workingHours': 'Monday - Saturday: 08:30 - 18:30 (PKT / UTC+5)',
         'emergencyNotice': '24/7 Priority Emergency Port-Loading & Vessel Logistics Dispatch Desk Active'
     }
     company_info.socials = {
-        'whatsapp': 'https://wa.me/923008660309',
+        'whatsapp': 'https://wa.me/923138660309',
         'linkedin': 'https://www.linkedin.com/company/a-h-impex/',
         'instagram': 'https://www.instagram.com/a_h_impex/',
         'facebook': 'https://www.facebook.com/ahimpextextiles',

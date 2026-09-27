@@ -15,9 +15,9 @@ import api from '../api/client';
 const DataContext = createContext(null);
 
 const STORAGE_KEYS = {
-  PRODUCTS: 'ah_impex_products_v9',
-  CATEGORIES: 'ah_impex_categories_v9',
-  COMPANY: 'ah_impex_company_v9',
+  PRODUCTS: 'ah_impex_products_v11',
+  CATEGORIES: 'ah_impex_categories_v10',
+  COMPANY: 'ah_impex_company_v10',
   INQUIRIES: 'ah_impex_inquiries_v9',
   USER: 'ah_impex_user_v9',
   TOKEN: 'ah_impex_access_token'
@@ -35,6 +35,11 @@ export function deduplicateProducts(productList) {
 
   for (const prod of productList) {
     if (!prod || !prod.title) continue;
+    
+    // Explicitly exclude deleted/removed products
+    if (prod.id === 'prod-06' || String(prod.title).toLowerCase().includes('carded yarn')) {
+      continue;
+    }
     
     // Normalized comparison key
     const rawTitle = String(prod.title).trim();

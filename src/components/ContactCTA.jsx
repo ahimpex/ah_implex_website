@@ -25,8 +25,8 @@ import { COMPANY } from '../data/company';
 export default function ContactCTA({ onOpenQuoteModal }) {
   const { companyInfo } = useData();
   const info = companyInfo || COMPANY;
-  const whatsappNumber = info.contact?.whatsappClean || '923008660309';
-  const whatsappFormatted = info.contact?.whatsapp || '+92 300 8660309';
+  const whatsappNumber = info.contact?.whatsappClean || '923138660309';
+  const whatsappFormatted = info.contact?.whatsapp || '+92 313 8660309';
 
   return (
     <section id="contact" className="py-14 sm:py-20 lg:py-24 bg-brand-900 relative overflow-hidden border-t border-brand-800">

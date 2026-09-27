@@ -26,7 +26,7 @@ import { COMPANY } from '../data/company';
 export default function FloatingContactButtons() {
   const { companyInfo } = useData();
   const info = companyInfo || COMPANY;
-  const whatsappNumber = info.contact?.whatsappClean || '923008660309';
+  const whatsappNumber = info.contact?.whatsappClean || '923138660309';
   const [isOpenMobile, setIsOpenMobile] = useState(false);
 
   return (

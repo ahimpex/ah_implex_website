@@ -17,7 +17,7 @@ import luxuryBedsheetsImg from '../assets/Product/luxury-bedsheets.jpg';
 import highThreadCountImg from '../assets/Product/high-thread-count-bedding.jfif';
 import industrialFabricsImg from '../assets/Product/industrial-durability-fabrics.jfif';
 import terryTowelsImg from '../assets/Product/plush-terry-towelling.jfif';
-import medicalFabricsImg from '../assets/Product/antimicrobial-hospital-fabrics.jfif';
+import medicalFabricsImg from '../assets/Product/hospital.jpg';
 import cardedYarnCanvasImg from '../assets/Product/carded-yarn-canvas.jfif';
 
 export const PRODUCT_IMAGES = {
@@ -68,7 +68,6 @@ export const PRODUCT_CATEGORIES = [
   { id: 'apparel', label: 'Apparel & Workwear' },
   { id: 'hospitality', label: 'Hospitality & Dining' },
   { id: 'medical', label: 'Institutional & Medical' },
-  { id: 'oem', label: 'OEM & Yarn Weaving' },
 ];
 
 export const PRODUCTS = [
@@ -179,25 +178,5 @@ export const PRODUCTS = [
     },
     features: ['Withstands 75°C+ high-temperature sterilization', 'Fluid-repellent fluorocarbon barrier finish', 'Lint-free spun yarns for surgical cleanrooms', 'Silvadur antimicrobial protection'],
     badge: 'Medical Grade'
-  },
-  {
-    id: 'prod-06',
-    category: 'oem',
-    categoryName: 'OEM & Yarn Weaving',
-    title: 'Carded Yarn Cones, Canvas & Custom Weaving',
-    tagline: 'Bespoke Warp/Weft Constructions from Greige to Finish',
-    description: 'Direct procurement of ring-spun and carded yarn cones. Shuttleless air-jet weaving of canvas, heavy duck, oxford, and greige master rolls up to 340cm width.',
-    image: cardedYarnCanvasImg,
-    fallbackImage: cardedYarnCanvasImg,
-    specs: {
-      yarnCounts: 'Ne 10/1 to Ne 100/1 Carded & Combed',
-      widths: '60" to 134" Extra-Wide Weaving',
-      gsm: '120 – 480 GSM Heavy Canvas and Duck',
-      finish: 'Greige master rolls, Bleached, Vat dyed',
-      moq: '5,000 Linear Meters',
-      leadTime: '30–45 Days'
-    },
-    features: ['Spectrophotometric Delta E < 0.8 lab dip match', '180+ Air-jet and dobby looms', 'AQL 1.5 export quality standard', 'Export seaworthy roll packing in polyethylene'],
-    badge: 'OEM Solution'
   }
 ];
