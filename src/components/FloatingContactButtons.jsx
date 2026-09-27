@@ -75,7 +75,7 @@ export default function FloatingContactButtons() {
 
         {/* 3. Facebook */}
         <a
-          href="https://www.facebook.com/ahimpextextiles"
+          href="https://www.facebook.com/profile.php?id=61594760284821"
           target="_blank"
           rel="noopener noreferrer"
           title="A&H Impex Facebook Updates"

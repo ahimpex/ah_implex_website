@@ -70,7 +70,7 @@ export default function TopBar() {
               <FontAwesomeIcon icon={faInstagram} className="text-xs text-[#E1306C]" />
             </a>
             <a
-              href="https://www.facebook.com/ahimpextextiles"
+              href="https://www.facebook.com/profile.php?id=61594760284821"
               target="_blank"
               rel="noopener noreferrer"
               title="A&H Impex Facebook Page"

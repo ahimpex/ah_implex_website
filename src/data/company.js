@@ -86,7 +86,7 @@ export const COMPANY = {
   socials: [
     { name: 'LinkedIn', url: 'https://www.linkedin.com/company/a-h-impex/', icon: 'Linkedin', followers: 'Corporate' },
     { name: 'Instagram', url: 'https://www.instagram.com/a_h_impex/', icon: 'Instagram', followers: 'Showroom' },
-    { name: 'Facebook', url: 'https://www.facebook.com/ahimpextextiles', icon: 'Facebook', followers: 'Official Page' },
+    { name: 'Facebook', url: 'https://www.facebook.com/profile.php?id=61594760284821', icon: 'Facebook', followers: 'Official Page' },
     { name: 'WhatsApp', url: 'https://wa.me/923138660309', icon: 'MessageSquare', followers: 'Instant RFQ' },
     { name: 'Email', url: 'mailto:export@ahimpextextiles.com', icon: 'Mail', followers: 'Direct Desk' }
   ]

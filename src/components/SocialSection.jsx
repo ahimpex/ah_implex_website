@@ -84,7 +84,7 @@ export default function SocialSection() {
       iconContainer: 'bg-[#1877f2]/10 text-[#1877f2]',
       badgeClass: 'text-[#1877f2] bg-blue-50 border-blue-200',
       borderHover: 'hover:border-[#1877f2]',
-      url: 'https://www.facebook.com/ahimpextextiles',
+      url: 'https://www.facebook.com/profile.php?id=61594760284821',
       icon: faFacebookF
     },
     {

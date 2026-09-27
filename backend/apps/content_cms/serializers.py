@@ -34,7 +34,7 @@ class CompanyInfoSerializer(serializers.ModelSerializer):
                 'whatsapp': 'https://wa.me/923138660309',
                 'linkedin': 'https://www.linkedin.com/company/a-h-impex/',
                 'instagram': 'https://www.instagram.com/a_h_impex/',
-                'facebook': 'https://www.facebook.com/ahimpextextiles',
+                'facebook': 'https://www.facebook.com/profile.php?id=61594760284821',
                 'youtube': 'https://www.youtube.com/@ahimpextextiles'
             }
         if not data.get('stats'):

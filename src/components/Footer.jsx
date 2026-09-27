@@ -85,7 +85,7 @@ export default function Footer({ onOpenQuoteModal, onOpenAdmin }) {
                   <FontAwesomeIcon icon={faInstagram} className="text-xs sm:text-sm" />
                 </a>
                 <a
-                  href="https://www.facebook.com/ahimpextextiles"
+                  href="https://www.facebook.com/profile.php?id=61594760284821"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-brand-800 hover:bg-[#1877f2] text-slate-300 hover:text-white flex items-center justify-center transition-all border border-brand-700 hover:border-[#1877f2] hover:scale-105 shadow-sm"
