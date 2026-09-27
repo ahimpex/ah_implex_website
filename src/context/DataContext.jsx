@@ -182,7 +182,23 @@ export function DataProvider({ children }) {
   const [companyInfo, setCompanyInfo] = useState(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEYS.COMPANY);
-      return saved ? JSON.parse(saved) : DEFAULT_COMPANY;
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (parsed && parsed.contact) {
+          return {
+            ...DEFAULT_COMPANY,
+            ...parsed,
+            contact: {
+              ...DEFAULT_COMPANY.contact,
+              ...parsed.contact,
+              phone: (parsed.contact.phone || '').includes('300') ? '+92 313 8660309' : (parsed.contact.phone || DEFAULT_COMPANY.contact.phone),
+              whatsapp: (parsed.contact.whatsapp || '').includes('300') ? '+92 313 8660309' : (parsed.contact.whatsapp || DEFAULT_COMPANY.contact.whatsapp),
+              whatsappClean: (parsed.contact.whatsappClean || '').includes('300') ? '923138660309' : (parsed.contact.whatsappClean || DEFAULT_COMPANY.contact.whatsappClean)
+            }
+          };
+        }
+      }
+      return DEFAULT_COMPANY;
     } catch {
       return DEFAULT_COMPANY;
     }
@@ -248,14 +264,26 @@ export function DataProvider({ children }) {
       }
 
       if (companyRes.status === 'fulfilled' && companyRes.value && companyRes.value.name) {
+        const backendCompany = companyRes.value;
+        const normalizedContact = backendCompany.contact ? {
+          ...DEFAULT_COMPANY.contact,
+          ...backendCompany.contact,
+          whatsapp: (backendCompany.contact.whatsapp || '').includes('300') ? '+92 313 8660309' : (backendCompany.contact.whatsapp || DEFAULT_COMPANY.contact.whatsapp),
+          whatsappClean: (backendCompany.contact.whatsappClean || '').includes('300') ? '923138660309' : (backendCompany.contact.whatsappClean || DEFAULT_COMPANY.contact.whatsappClean),
+          phone: (backendCompany.contact.phone || '').includes('300') ? '+92 313 8660309' : (backendCompany.contact.phone || DEFAULT_COMPANY.contact.phone)
+        } : DEFAULT_COMPANY.contact;
+
         setCompanyInfo(prev => ({
           ...prev,
-          ...companyRes.value,
-          contact: companyRes.value.contact || prev.contact,
-          socials: companyRes.value.socials || prev.socials,
-          stats: companyRes.value.stats || prev.stats
+          ...backendCompany,
+          contact: normalizedContact,
+          socials: backendCompany.socials || prev.socials,
+          stats: backendCompany.stats || prev.stats
         }));
-        localStorage.setItem(STORAGE_KEYS.COMPANY, JSON.stringify(companyRes.value));
+        localStorage.setItem(STORAGE_KEYS.COMPANY, JSON.stringify({
+          ...backendCompany,
+          contact: normalizedContact
+        }));
         connected = true;
       }
 

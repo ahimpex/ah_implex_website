@@ -19,8 +19,10 @@ import { COMPANY } from '../data/company';
 export default function TopBar() {
   const { companyInfo } = useData();
   const info = companyInfo || COMPANY;
-  const whatsappNumber = info.contact?.whatsappClean || '923138660309';
-  const phoneFormatted = info.contact?.phone || '+92 313 8660309';
+  const rawNumber = String(info.contact?.whatsappClean || '923138660309');
+  const whatsappNumber = rawNumber.includes('300') ? '923138660309' : rawNumber;
+  const rawPhone = String(info.contact?.phone || '+92 313 8660309');
+  const phoneFormatted = rawPhone.includes('300') ? '+92 313 8660309' : rawPhone;
 
   return (
     <aside

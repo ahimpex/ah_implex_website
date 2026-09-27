@@ -221,12 +221,12 @@ export default function Footer({ onOpenQuoteModal, onOpenAdmin }) {
               <li className="flex items-start gap-2">
                 <FontAwesomeIcon icon={faPhone} className="text-emerald-400 text-xs shrink-0 mt-0.5" aria-hidden="true" />
                 <a
-                  href={`https://wa.me/${info.contact.whatsappClean}`}
+                  href={`https://wa.me/${String(info.contact?.whatsappClean || '923138660309').includes('300') ? '923138660309' : (info.contact?.whatsappClean || '923138660309')}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-emerald-400 transition-colors font-medium text-emerald-300 font-mono"
                 >
-                  {info.contact.whatsapp}
+                  {String(info.contact?.whatsapp || '+92 313 8660309').includes('300') ? '+92 313 8660309' : (info.contact?.whatsapp || '+92 313 8660309')}
                 </a>
               </li>
               <li className="flex items-start gap-2">
