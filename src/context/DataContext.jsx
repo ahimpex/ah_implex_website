@@ -15,7 +15,7 @@ import api from '../api/client';
 const DataContext = createContext(null);
 
 const STORAGE_KEYS = {
-  PRODUCTS: 'ah_impex_products_v17',
+  PRODUCTS: 'ah_impex_products_v25',
   CATEGORIES: 'ah_impex_categories_v10',
   COMPANY: 'ah_impex_company_v10',
   INQUIRIES: 'ah_impex_inquiries_v9',
@@ -36,9 +36,14 @@ export function deduplicateProducts(productList) {
   for (const prod of productList) {
     if (!prod || !prod.title) continue;
     
-    // Explicitly exclude deleted/stale products (e.g. duplicate BedSheets or carded yarn)
+    // Explicitly exclude deleted/stale duplicate products
     const lowerTitle = String(prod.title).toLowerCase().trim();
-    if (lowerTitle === 'bedsheets' || (lowerTitle.includes('carded yarn') && !lowerTitle.includes('canvas') && !lowerTitle.includes('curtain'))) {
+    if (
+      lowerTitle === 'bedsheets' ||
+      (lowerTitle.includes('carded yarn') && !lowerTitle.includes('canvas') && !lowerTitle.includes('curtain')) ||
+      lowerTitle.includes('300tc - 1000tc sateen') ||
+      lowerTitle.includes('high thread-count hotel')
+    ) {
       continue;
     }
     
@@ -256,9 +261,9 @@ export function DataProvider({ children }) {
           };
         });
 
-        // Merge & strictly deduplicate: local admin products are preserved
+        // Merge & strictly deduplicate: DEFAULT_PRODUCTS takes precedence
         setProducts((prev) => {
-          const merged = deduplicateProducts([...prev, ...backendProds]);
+          const merged = deduplicateProducts([...DEFAULT_PRODUCTS, ...prev, ...backendProds]);
           localStorage.setItem(STORAGE_KEYS.PRODUCTS, JSON.stringify(merged));
           return merged;
         });
