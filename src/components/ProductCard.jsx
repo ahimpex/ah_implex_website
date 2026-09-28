@@ -30,7 +30,6 @@ export default function ProductCard({ product, onSelectProduct }) {
 
   const material = specs.composition || specs.weave || specs.capabilities || '100% Export Grade';
   const weight = specs.threadCount || specs.gsm || '';
-  const moq = specs.moq || '500 Units';
 
   const displayTitle = (product?.title || '').replace(/\s+and\s+/gi, ' & ');
   const displayCategory = (product?.categoryName || product?.category_name || '').replace(/\s+and\s+/gi, ' & ');
@@ -73,15 +72,9 @@ export default function ProductCard({ product, onSelectProduct }) {
           </h3>
 
           {/* 1-Line Clean Material & Specs */}
-          <p className="text-xs text-slate-600 font-medium line-clamp-1 mb-4">
+          <p className="text-xs text-slate-600 font-medium line-clamp-1">
             {material} {weight ? `• ${weight}` : ''}
           </p>
-
-          {/* Minimal Key Info: MOQ */}
-          <div className="flex items-center justify-between text-xs py-2.5 px-3 rounded-xl bg-slate-50 border border-slate-100">
-            <span className="text-slate-500 font-medium">Min. Order (MOQ):</span>
-            <span className="font-bold text-emerald-700 font-mono">{moq}</span>
-          </div>
         </div>
       </div>
 
