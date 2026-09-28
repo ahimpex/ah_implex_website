@@ -15,7 +15,7 @@
 // Local Product Asset Imports (Clean URL-safe filenames for production deployment)
 import luxuryBedsheetsImg from '../assets/Product/luxury-bedsheets.jpg';
 import highThreadCountImg from '../assets/Product/high-thread-count-bedding.jfif';
-import industrialFabricsImg from '../assets/Product/industrial-durability-fabrics.jfif';
+import industrialFabricsImg from '../assets/Product/industrial-workwear.jpg';
 import terryTowelsImg from '../assets/Product/plush-terry-towelling.jfif';
 import medicalFabricsImg from '../assets/Product/hospital.jpg';
 import cardedYarnCanvasImg from '../assets/Product/carded-yarn-canvas.jfif';
@@ -26,6 +26,7 @@ export const PRODUCT_IMAGES = {
   luxuryBedsheets: luxuryBedsheetsImg,
   highThreadCount: highThreadCountImg,
   industrialFabrics: industrialFabricsImg,
+  industrialWorkwear: industrialFabricsImg,
   terryTowels: terryTowelsImg,
   medicalFabrics: medicalFabricsImg,
   cardedYarnCanvas: cardedYarnCanvasImg,
