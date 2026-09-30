@@ -66,7 +66,7 @@ export default function AboutSection({ onOpenQuoteModal }) {
               <SafeImage
                 src={airJetWeavingImg}
                 fallbackSrc={airJetWeavingImg}
-                alt="A&H IMPEX Modern Air-Jet Textile Weaving Looms"
+                alt="A&H IMPEX Garment & Bedsheet Precision Stitching & Manufacturing"
                 className="w-full h-64 sm:h-80 md:h-[480px] object-cover"
                 zoomOnHover={true}
               />
