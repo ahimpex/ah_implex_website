@@ -12,6 +12,7 @@ import {
   faEnvelope,
   faPhone,
   faLocationDot,
+  faShieldHalved,
   faGauge
 } from '@fortawesome/free-solid-svg-icons';
 import {
