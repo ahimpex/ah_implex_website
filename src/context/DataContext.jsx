@@ -15,7 +15,7 @@ import api from '../api/client';
 const DataContext = createContext(null);
 
 const STORAGE_KEYS = {
-  PRODUCTS: 'ah_impex_products_v27',
+  PRODUCTS: 'ah_impex_products_v29',
   CATEGORIES: 'ah_impex_categories_v10',
   COMPANY: 'ah_impex_company_v10',
   INQUIRIES: 'ah_impex_inquiries_v9',
@@ -36,11 +36,20 @@ export function deduplicateProducts(productList) {
   for (const prod of productList) {
     if (!prod || !prod.title) continue;
     
-    // Explicitly exclude deleted/stale duplicate products
+    const id = String(prod.id || '');
     const lowerTitle = String(prod.title).toLowerCase().trim();
+    const cat = String(prod.categoryName || prod.category_name || prod.category || '').toLowerCase();
+
+    // Explicitly exclude deleted/stale duplicate & test products
     if (
       lowerTitle === 'bedsheets' ||
-      (lowerTitle.includes('carded yarn') && !lowerTitle.includes('canvas') && !lowerTitle.includes('curtain')) ||
+      lowerTitle.includes('cotton canvas duck') ||
+      lowerTitle.includes('canvas duck') ||
+      lowerTitle.includes('export grade cotton canvas') ||
+      lowerTitle.includes('duck fabric') ||
+      id.startsWith('test-prod') ||
+      (cat.includes('apparel') && (lowerTitle.includes('curtain') || lowerTitle.includes('canvas') || lowerTitle.includes('drapery'))) ||
+      (lowerTitle.includes('carded yarn') && !lowerTitle.includes('curtain')) ||
       lowerTitle.includes('300tc - 1000tc sateen') ||
       lowerTitle.includes('high thread-count hotel')
     ) {
@@ -54,8 +63,6 @@ export function deduplicateProducts(productList) {
       .replace(/&amp;/g, '&')
       .replace(/\band\b/g, '&')
       .replace(/[^a-z0-9]/g, '');
-
-    const id = String(prod.id || '');
 
     // Skip if already seen
     if (normTitle && seenTitles.has(normTitle)) continue;
