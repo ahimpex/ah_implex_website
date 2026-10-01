@@ -193,23 +193,28 @@ export const PRODUCTS = [
   },
   {
     id: 'prod-06',
-    category: 'apparel',
-    categoryName: 'Apparel & Workwear',
-    title: 'Export Grade Cotton Canvas Duck Fabric',
-    tagline: '10oz to 24oz heavy-duty waterproof canvas & decorative curtains',
-    description: 'Premium 100% cotton canvas duck fabric and commercial window drapery woven on high-speed air-jet looms for export markets.',
+    category: 'home',
+    categoryName: 'Home Textiles',
+    title: 'Luxury Window Curtains & Drapery Linens',
+    tagline: 'Custom blackout, thermal-insulated, and decorative jacquard curtains & window drapery',
+    description: 'Engineered for luxury residences, 5-star hotels, and commercial spaces. Crafted from premium 100% cotton canvas, textured jacquard, and blackout weaves with superior UV resistance, rich drape, and tailored eyelet or pinch-pleat finishing.',
     image: curtainsImg,
     fallbackImage: curtainsImg,
     specs: {
-      composition: '100% Cotton Canvas',
-      gsm: '450 GSM',
-      finish: 'Water-Repellent, Colorfast Reactive Dyeing, Preshrunk',
-      sizes: 'Custom Panel Lengths & Extra-Wide Roll Widths',
-      colors: 'Navy Blue, Olive, Khaki, Natural Greige',
-      moq: '1,000 Meters',
-      leadTime: '30–40 Days'
+      composition: '100% Cotton Canvas / Textured Jacquard / Blackout Blend',
+      gsm: '260 – 450 GSM Heavyweight Drapery',
+      finish: 'Thermal Blackout, Anti-Static, Colorfast Reactive Dyeing',
+      sizes: 'Custom Panel Drops (84", 96", 108") & Extra-Wide Roll Widths',
+      colors: 'Navy Blue, Charcoal, Natural Greige, Olive, Custom Pantones',
+      moq: '500 Panels / 1,000 Meters',
+      leadTime: '25–35 Days'
     },
-    features: ['High tear and tensile strength', 'Even air-jet weave structure', 'Custom water-repellent & PU coating available', 'OEKO-TEX Certified dyes'],
-    badge: 'Export Quality'
+    features: [
+      'Total light blocking & thermal energy efficiency',
+      'Smooth, rich drape with weighted hem finish',
+      'Custom eyelet, grommet, rod-pocket & pinch-pleat tailoring',
+      'OEKO-TEX Standard 100 Certified safe dyes'
+    ],
+    badge: 'Home & Window Linens'
   }
 ];

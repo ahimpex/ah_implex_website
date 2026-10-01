@@ -240,6 +240,54 @@ def seed_all():
             ],
             'is_featured': True,
             'order': 4
+        },
+        {
+            'id': 'prod-05',
+            'title': 'Premium Damask Table Clothing & Dining Linens',
+            'category_slug': 'hospitality-dining',
+            'category_name': 'Hospitality & Dining',
+            'badge': 'Banquet & Dining Grade',
+            'tagline': 'Commercial grade jacquard damask tablecloths, napkins, & banquet table runners.',
+            'description': 'Engineered for luxury restaurants, 5-star hotels, and banquet venues. Woven from 100% mercerized combed cotton with soil-release finishes and double-stitched hem borders.',
+            'image_url': 'https://images.unsplash.com/photo-1574634534894-89d7576c8259?auto=format&fit=crop&w=1200&q=80',
+            'specs': {
+                'composition': '100% Combed Cotton / 80-20 Damask Blend',
+                'gsm': '210 – 260 GSM Heavyweight Dining',
+                'moq': '500 Sets / 1,000 Pcs',
+                'leadTime': '25–35 Days',
+                'packaging': 'Export cartons / Polywrapped packs'
+            },
+            'features': [
+                'Commercial laundry durable (300+ wash cycles)',
+                'High soil-release and stain-repellent finish',
+                'Precision mitred corners and double-stitched hems'
+            ],
+            'is_featured': True,
+            'order': 5
+        },
+        {
+            'id': 'prod-06',
+            'title': 'Luxury Window Curtains & Drapery Linens',
+            'category_slug': 'home-textiles',
+            'category_name': 'Home Textiles',
+            'badge': 'Home & Window Linens',
+            'tagline': 'Custom blackout, thermal-insulated, and decorative jacquard curtains & window drapery.',
+            'description': 'Engineered for luxury residences, 5-star hotels, and commercial spaces. Crafted from premium 100% cotton canvas, textured jacquard, and blackout weaves with superior UV resistance, rich drape, and tailored eyelet or pinch-pleat finishing.',
+            'image_url': 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80',
+            'specs': {
+                'composition': '100% Cotton Canvas / Textured Jacquard / Blackout Blend',
+                'gsm': '260 – 450 GSM Heavyweight Drapery',
+                'moq': '500 Panels / 1,000 Meters',
+                'leadTime': '25–35 Days',
+                'packaging': 'Luxury polybag / Export cartons'
+            },
+            'features': [
+                'Total light blocking & thermal energy efficiency',
+                'Smooth, rich drape with weighted hem finish',
+                'Custom eyelet, grommet, rod-pocket & pinch-pleat tailoring'
+            ],
+            'is_featured': True,
+            'order': 6
         }
     ]
 
