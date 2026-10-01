@@ -12,7 +12,6 @@ import {
   faEnvelope,
   faPhone,
   faLocationDot,
-  faShieldHalved,
   faGauge
 } from '@fortawesome/free-solid-svg-icons';
 import {
@@ -103,13 +102,6 @@ export default function Footer({ onOpenQuoteModal, onOpenAdmin }) {
                   <FontAwesomeIcon icon={faWhatsapp} className="text-xs sm:text-sm" />
                 </a>
               </div>
-            </div>
-
-            <div className="flex items-center gap-2 pt-1">
-              <span className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[11px] sm:text-xs font-medium font-mono">
-                <FontAwesomeIcon icon={faShieldHalved} className="text-xs" aria-hidden="true" />
-                ISO 9001 <span className="font-sans font-semibold">&amp;</span> OEKO-TEX Standard 100
-              </span>
             </div>
           </div>
 
